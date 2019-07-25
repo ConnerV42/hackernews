@@ -1,33 +1,22 @@
 .App {
+  background-color: white;
+}
+
+.container {
+  padding-top: 2%;
+}
+
+.glow {
+  width: 400px;
+  height: 90px;
+  margin: 0 auto;
   text-align: center;
+  padding: 10px;
+  color: pink;
+  font: 60px 'Poiret One', cursive;
+  box-shadow: inset 0px 0px 10px #ffbbbb, 0px 0px 10px #ff0000;
+  text-shadow: 0px 0px 10px #ff0000, 2px 2px 4px #000;
+  border: 2px solid pink;
+  border-radius: 15px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
