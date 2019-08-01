@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import debounce from "lodash.debounce";
 import './News.css';
+import CommentTree from './CommentTree';
 
 const CurrentDisplayState = {
     TOP: 1,
     NEW: 2,
     JOBS: 3
 };
-const STORIESPERSCROLL = 20;
+const STORIESPERSCROLL = 15;
 
 class News extends Component {
     constructor(props) {
@@ -40,7 +41,7 @@ class News extends Component {
         }, 100);
     }
 
-    componentDidMount() {
+    componentDidMount = () => {
         this.loadStories();
     }
 
@@ -129,21 +130,16 @@ class News extends Component {
         } else if (this.state.displayState === CurrentDisplayState.NEW) {
             stories = this.state.newStories;
         }
-
+        debugger;
         return (
             <div className="News">
                 <div className="container">
                     <a onClick={this.btnTopNewsClick} className="action-button animate blue">Top</a>
                     <a onClick={this.btnNewNewsClick} className="action-button animate red">New</a>
                 </div>
-                <ul>
-                    {stories.map((story, index) => {
-                        return <div className="post">
-                            <li className="title" key={index}><a href="#" className="link" href={story.url}>{story.title}</a></li>
-                            <li className="detail" key={index}>{story.score} points by {story.by} | <a className="link"> +{story.descendants} comments</a></li>
-                        </div>
-                    })}
-                </ul>
+                {stories.map((story) => {
+                    if (story !== null) return <CommentTree story={story}></CommentTree>
+                })}
             </div>
         );
     }
