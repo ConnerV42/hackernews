@@ -2,19 +2,18 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 1%;
+    margin-top: 25px;
 }
 
 .post {
     margin-bottom: 4px;
 }
 
-.detail {
-    font-size: 70%;
-}
-
 ul {
     list-style-type: none;
+    padding-left: 5%;
+    margin-top: 0px;
+    margin-bottom: 8px;
 }
 
 .link {
@@ -38,19 +37,19 @@ ul {
 .action-button
 {
 	position: relative;
-	padding: 6px 20px;
     margin: 0px 10px 10px 0px;
     float: left;
 	border-radius: 8px;
     font-family: 'Pacifico', cursive;
     font-size: 25px;
-    font-weight: bold;
+    font-weight: 700;
 	color: #FFF;
 	text-decoration: none;	
 }
 
 .blue
 {
+    padding: 6px 38px 6px 38px;
 	background-color: #3498DB;
 	border-bottom: 5px solid #2980B9;
 	text-shadow: 0px -2px #2980B9;
@@ -58,6 +57,7 @@ ul {
 
 .red
 {
+    padding: 6px 35px 6px 35px;
 	background-color: #E74C3C;
 	border-bottom: 5px solid #BD3E31;
 	text-shadow: 0px -2px #BD3E31;
@@ -68,4 +68,32 @@ ul {
 	transform: translate(0px,4px);
   -webkit-transform: translate(0px,4px);
 	border-bottom: 1px solid;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: 5%;
+    }
+
+    .red {
+        margin-left: 12px;
+        margin-right: 0px;
+        padding: 6px 35px 6px 35px;
+    }
+
+    .blue {
+        margin-right: 12px;
+        padding: 6px 37px 6px 37px;
+    }
+
+    .action-button {
+        position: relative;
+        float: left;
+        border-radius: 8px;
+        font-family: 'Pacifico', cursive;
+        font-size: 20px;
+        font-weight: 600;
+        color: #FFF;
+        text-decoration: none;	
+    }
 }

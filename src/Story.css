@@ -1,0 +1,22 @@
+.title {
+    max-width: 90%;
+    margin-bottom: 1px;
+}
+
+.detail {
+    max-width: 90%;
+    font-size: 70%;
+    padding-bottom: 10px;
+}
+
+@media (max-width: 425px) {
+    .title .detail {
+        max-width: 95%;
+    }
+
+    ul {
+        padding-left: 5%;
+        margin-top: 0px;
+        margin-bottom: 8px;
+    }
+}

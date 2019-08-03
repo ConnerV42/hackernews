@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Kid from "./Kid.js";
+import Comment from "./Comment.js";
+import "./Story.css";
 
-class CommentTree extends Component {
+class Story extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -33,16 +34,16 @@ class CommentTree extends Component {
         this.setState({ treeOpen: false });
     }
 
-    render() {
+    render = () => {
         let { kids, treeOpen } = this.state;
         let { story } = this.props;
         if (treeOpen) {
             return (
                 <ul>
                     <li className="title"><a className="link" href={story.url}>{story.title}</a></li>
-                    <li className="detail" key={story.id}>{story.score} points by {story.by} | <a className="link" onClick={this.closeComment}> {story.descendants} comments -</a></li>
+                    <li className="detail" key={story.id}>{story.score} points by {story.by} | <a className="link" onClick={this.closeComment}> {story.descendants} comments [-]</a></li>
                     {kids.map((kid) => {
-                        return <Kid kid={kid}></Kid>
+                        return <Comment kid={kid}></Comment>
                     })}
                 </ul>
             );
@@ -50,10 +51,10 @@ class CommentTree extends Component {
         return ( // default render (if comment tree isn't open)
             <ul>
                 <li className="title"><a className="link" href={story.url}>{story.title}</a></li>
-                <li className="detail" key={story.id}>{story.score} points by {story.by} | <a className="link" onClick={this.loadComments}> {story.descendants} comments +</a></li>
+                <li className="detail" key={story.id}>{story.score} points by {story.by} | <a className="link" onClick={this.loadComments}> {story.descendants} comments [+]</a></li>
             </ul>
         );
     }
 }
 
-export default CommentTree;
+export default Story;

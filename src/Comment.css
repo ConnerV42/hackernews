@@ -1,0 +1,23 @@
+.comment {
+    padding-left: 20px;
+}
+
+.comment-text {
+    max-width: 90%;
+    font-size: 80%;
+    margin-bottom: 10px;
+}
+
+.comment-detail {
+    font-size: 80%;
+    margin-bottom: 2px;
+}
+
+p {
+    max-width: 90%;
+}
+
+a {
+    word-wrap: break-word;
+}
+

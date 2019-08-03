@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import debounce from "lodash.debounce";
 import './News.css';
-import CommentTree from './CommentTree';
+import Story from './Story';
 
 const CurrentDisplayState = {
     TOP: 1,
@@ -123,14 +123,13 @@ class News extends Component {
         });
     }
 
-    render() {
+    render = () => {
         let stories;
         if (this.state.displayState === CurrentDisplayState.TOP) {
             stories = this.state.topStories;
         } else if (this.state.displayState === CurrentDisplayState.NEW) {
             stories = this.state.newStories;
         }
-        debugger;
         return (
             <div className="News">
                 <div className="container">
@@ -138,7 +137,7 @@ class News extends Component {
                     <a onClick={this.btnNewNewsClick} className="action-button animate red">New</a>
                 </div>
                 {stories.map((story) => {
-                    if (story !== null) return <CommentTree story={story}></CommentTree>
+                    if (story !== null) return <Story story={story}></Story>
                 })}
             </div>
         );
